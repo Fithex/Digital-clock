@@ -1,4 +1,7 @@
-body{
+c
+
+
+body {
     background-image: url(photo.avif);
     background-position: center;
     background-repeat: no-repeat;
@@ -6,19 +9,34 @@ body{
     background-attachment: fixed;
     margin: 0;
 }
-#clock-container{
+
+#clock-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 1rem;
+    box-sizing: border-box;
 }
-  #clock{
+
+#clock {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 900px;
+    padding: 0.4em 0.5em;
+    border-radius: 0.5rem;
     font-family: monospace;
-    font-size: 6.5rem;
+    font-size: clamp(2rem, 11vw, 6.5rem);
     font-weight: bold;
     text-align: center;
-    color:rgb(39, 2, 2);
+    color: rgb(39, 2, 2);
     backdrop-filter: blur(5px);
     background-color: hsla(0, 0%, 100%, 0.1);
-    width: 100%;
-  }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+}
